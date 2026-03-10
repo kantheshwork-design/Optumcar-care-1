@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-black">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optum Car Care | Premium Vehicle Protection</title>
+    <meta name="description" content="Luxury car protection studio specializing in Paint Protection Film (PPF), Ceramic Coatings, and Premium Detailing.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP for Advanced Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#000000',
+                            dark: '#0a0a0c',
+                            panel: '#151516',
+                            gold: '#E5BA38',
+                            gray: '#a1a1a6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        heading: ['Syne', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(229,186,56,0.15)',
+                        'glow-hover': '0 0 60px -10px rgba(229,186,56,0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #E5BA38; }
+
+        /* Apple-style Glass Panel */
+        .glass-panel {
+            background: rgba(21, 21, 22, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Smooth Image Scaling */
+        .img-scale-wrapper { overflow: hidden; }
+        .img-scale-wrapper img {
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .img-scale-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Partner Logos Hover */
+        .partner-logo {
+            filter: grayscale(100%) opacity(50%);
+            transition: all 0.5s ease;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0%) opacity(100%);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-brand-black text-[#f5f5f7] font-sans antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Sleek Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-transparent py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 group z-50">
+                <h1 class="font-heading font-bold text-2xl tracking-wide text-white transition-transform duration-500 group-hover:scale-105">
+                    <span class="text-brand-gold">OP</span>TUM<br>
+                    <span class="text-[9px] tracking-[0.4em] text-gray-500 font-sans block mt-[-4px] uppercase">Car Care</span>
+                </h1>
+            </a>
+
+            <!-- Desktop Menu (Glass pill) -->
+            <div class="hidden md:flex items-center space-x-1 px-6 py-2 rounded-full glass-panel shadow-2xl">
+                <a href="#services" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Services</a>
+                <a href="#process" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Process</a>
+                <a href="portfolio.html" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Gallery</a>
+                <a href="#booking" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+            </div>
+
+            <div class="hidden md:block z-50">
+                <a href="#booking" class="bg-white text-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-gold transition-all duration-300">Book Studio</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white focus:outline-none z-50 mix-blend-difference">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-black/95 backdrop-blur-2xl z-40 hidden flex-col items-center justify-center space-y-8 opacity-0 transition-opacity duration-500">
+            <a href="#services" class="mobile-link text-2xl font-heading hover:text-brand-gold transition-colors">Services</a>
+            <a href="#process" class="mobile-link text-2xl font-heading hover:text-brand-gold transition-colors">Process</a>
+            <a href="portfolio.html" class="mobile-link text-2xl font-heading hover:text-brand-gold transition-colors">Gallery</a>
+            <a href="#booking" class="mobile-link text-2xl font-heading hover:text-brand-gold transition-colors">Book Studio</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=100" alt="Luxury Car Detailing" class="w-full h-full object-cover opacity-60 scale-110" id="hero-bg">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-black/40 via-brand-black/60 to-brand-black"></div>
+        </div>
+
+        <div class="relative z-10 text-center max-w-5xl mx-auto px-4 mt-20">
+            <div class="hero-anim mb-6">
+                <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full glass-panel border border-white/10">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-gold"></span>
+                    </span>
+                    <span class="text-xs tracking-[0.2em] uppercase text-gray-300 font-medium">Accepting New Vehicles</span>
+                </div>
+            </div>
+            
+            <h2 class="hero-anim font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 leading-[1.1]">
+                Preserve <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-yellow-200 to-brand-gold">Perfection.</span>
+            </h2>
+            
+            <p class="hero-anim text-lg md:text-xl text-brand-gray mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                The premier destination for luxury vehicle protection. Flawless Paint Protection Film, Ceramic Coatings, and bespoke detailing.
+            </p>
+            
+            <div class="hero-anim">
+                <a href="#booking" class="inline-block bg-white text-black px-10 py-4 rounded-full font-semibold text-lg hover:bg-brand-gold hover:scale-105 transition-all duration-500 shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+                    Schedule Inspection
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certified Installers / Partners Section -->
+    <section class="py-20 bg-brand-black border-b border-white/5 relative z-10 scroll-section">
+        <div class="max-w-6xl mx-auto px-6 text-center reveal-element">
+            <p class="text-[10px] uppercase tracking-[0.3em] text-brand-gold font-bold mb-4">Our Partners</p>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-6 tracking-wide">CERTIFIED INSTALLERS</h2>
+            <p class="text-brand-gray max-w-3xl mx-auto text-sm md:text-base leading-relaxed mb-16 font-light">
+                Optum Car Care is proud to be a certified installer in automotive paint protection film and window tinting along with vinyl wrapping and other services. By using some of the best products in the industry, we guarantee and standby our craftsmanship.
+            </p>
+            
+            <!-- Logo Grid -->
+            <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-10 md:gap-x-20">
+                <div class="partner-logo text-3xl font-bold italic tracking-tighter text-white">XPEL</div>
+                <div class="partner-logo flex items-center gap-1 text-2xl font-black text-white"><i class="fas fa-shield-alt"></i> PWF</div>
+                <div class="partner-logo text-xl font-bold tracking-[0.2em] text-white">INOZETEK</div>
+                <div class="partner-logo text-2xl font-bold text-white">SunTek</div>
+                <div class="partner-logo text-2xl font-bold italic text-white tracking-widest">RUPES</div>
+                <div class="partner-logo text-2xl font-black text-white tracking-widest">3M</div>
+                <div class="partner-logo flex items-center gap-2 text-xl font-bold text-white"><i class="fas fa-layer-group"></i> AVERY</div>
+                <div class="partner-logo text-2xl font-bold text-white">STEK<span class="text-sm align-super">+</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quiz -->
+    <section class="py-24 bg-brand-dark relative z-20 overflow-hidden scroll-section">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal-element">
+            <h3 class="font-heading text-3xl md:text-4xl font-bold mb-4">Find Your Perfect Package</h3>
+            <p class="text-brand-gray mb-12 font-light">Take our 30-second assessment to determine the exact protection your vehicle demands.</p>
+            
+            <div id="quiz-container" class="glass-panel p-10 md:p-16 rounded-3xl shadow-glow relative overflow-hidden min-h-[300px] flex flex-col justify-center transition-all duration-500 hover:shadow-glow-hover border border-white/5">
+                <!-- Quiz injected via JS below -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 bg-brand-black overflow-hidden scroll-section">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal-element">
+                <p class="text-[10px] uppercase tracking-[0.3em] text-brand-gold font-bold mb-4">Our Expertise</p>
+                <h3 class="font-heading text-4xl md:text-6xl font-bold tracking-tight">Premium Services</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="reveal-card group rounded-3xl glass-panel overflow-hidden relative cursor-pointer flex flex-col h-[500px]">
+                    <div class="h-1/2 img-scale-wrapper relative">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="PPF">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-panel to-transparent"></div>
+                    </div>
+                    <div class="p-8 h-1/2 flex flex-col justify-between relative z-10 bg-brand-panel">
+                        <div>
+                            <h4 class="font-heading text-2xl font-bold mb-3 text-white group-hover:text-brand-gold transition-colors">Paint Protection Film</h4>
+                            <p class="text-brand-gray text-sm leading-relaxed font-light">Self-healing invisible shield against rock chips, scratches, and road debris.</p>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                           <a href="services.html"> <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Explore</span></a>
+                            <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-gold group-hover:border-brand-gold transition-all duration-500">
+                                <i class="fas fa-arrow-right text-white group-hover:text-black transition-colors transform group-hover:translate-x-1 duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="reveal-card group rounded-3xl glass-panel overflow-hidden relative cursor-pointer flex flex-col h-[500px]">
+                    <div class="h-1/2 img-scale-wrapper relative">
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Ceramic">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-panel to-transparent"></div>
+                    </div>
+                    <div class="p-8 h-1/2 flex flex-col justify-between relative z-10 bg-brand-panel">
+                        <div>
+                            <h4 class="font-heading text-2xl font-bold mb-3 text-white group-hover:text-brand-gold transition-colors">Ceramic Coating</h4>
+                            <p class="text-brand-gray text-sm leading-relaxed font-light">Ultra-hydrophobic nano-ceramic layer for unmatched gloss and chemical resistance.</p>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Explore</span>
+                            <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-gold group-hover:border-brand-gold transition-all duration-500">
+                                <i class="fas fa-arrow-right text-white group-hover:text-black transition-colors transform group-hover:translate-x-1 duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="reveal-card group rounded-3xl glass-panel overflow-hidden relative cursor-pointer flex flex-col h-[500px]">
+                    <div class="h-1/2 img-scale-wrapper relative">
+                        <img src="https://images.unsplash.com/photo-1552930294-6b595f4c2974?auto=format&fit=crop&q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Correction">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-panel to-transparent"></div>
+                    </div>
+                    <div class="p-8 h-1/2 flex flex-col justify-between relative z-10 bg-brand-panel">
+                        <div>
+                            <h4 class="font-heading text-2xl font-bold mb-3 text-white group-hover:text-brand-gold transition-colors">Paint Correction</h4>
+                            <p class="text-brand-gray text-sm leading-relaxed font-light">Multi-stage machine polishing to permanently level clear coat and remove swirls.</p>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Explore</span>
+                            <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-gold group-hover:border-brand-gold transition-all duration-500">
+                                <i class="fas fa-arrow-right text-white group-hover:text-black transition-colors transform group-hover:translate-x-1 duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Protect / Education -->
+    <section class="py-32 bg-brand-dark relative overflow-hidden scroll-section">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-20">
+            <div class="w-full lg:w-1/2 reveal-element img-scale-wrapper rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                <img src="https://images.unsplash.com/photo-1632731518342-9a3b6f2f9b89?auto=format&fit=crop&q=80" alt="PPF Installation" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full lg:w-1/2 space-y-10 reveal-element">
+                <div>
+                    <h2 class="text-brand-gold text-[10px] font-bold tracking-[0.3em] uppercase mb-4">Education</h2>
+                    <h3 class="font-heading text-4xl md:text-5xl font-bold mb-6 tracking-tight">Why Modern Paint Fails.</h3>
+                    <p class="text-brand-gray leading-relaxed font-light text-lg">
+                        Modern automotive paint is water-based and incredibly thin due to environmental regulations. Without an external barrier, road debris, bug acids, and UV rays rapidly degrade your investment.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 rounded-full glass-panel flex items-center justify-center mb-4">
+                            <i class="fas fa-shield-alt text-brand-gold"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-lg">Impact Defense</h4>
+                        <p class="text-sm text-brand-gray font-light">TPU films absorb impact from high-speed rock chips.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 rounded-full glass-panel flex items-center justify-center mb-4">
+                            <i class="fas fa-sun text-brand-gold"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-lg">UV Resistance</h4>
+                        <p class="text-sm text-brand-gray font-light">Blocks 99% of UV rays, preventing clear coat oxidation.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 rounded-full glass-panel flex items-center justify-center mb-4">
+                            <i class="fas fa-magic text-brand-gold"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-lg">Self-Healing</h4>
+                        <p class="text-sm text-brand-gray font-light">Elastomeric polymers heal light scratches with heat.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 rounded-full glass-panel flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-brand-gold"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-lg">Resale Value</h4>
+                        <p class="text-sm text-brand-gray font-light">Maintains flawless factory paint for higher valuations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-32 bg-brand-black border-y border-white/5 overflow-hidden scroll-section">
+        <div class="max-w-6xl mx-auto px-6 reveal-element">
+            <div class="text-center mb-20">
+                <h3 class="font-heading text-4xl md:text-5xl font-bold">The Optum Difference</h3>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <!-- Competitors -->
+                <div class="flex-1 p-10 md:p-14 glass-panel rounded-3xl opacity-60 hover:opacity-100 transition-opacity duration-500 border border-transparent hover:border-red-500/30">
+                    <h4 class="text-2xl font-bold text-gray-500 mb-8 border-b border-white/10 pb-6 text-center">Standard Detailers</h4>
+                    <ul class="space-y-8 font-light text-brand-gray">
+                        <li class="flex items-center gap-4"><i class="fas fa-times text-red-500 text-xl w-6"></i> Open-air dusty environment</li>
+                        <li class="flex items-center gap-4"><i class="fas fa-times text-red-500 text-xl w-6"></i> Pre-cut templates showing edges</li>
+                        <li class="flex items-center gap-4"><i class="fas fa-times text-red-500 text-xl w-6"></i> Generic unbranded films</li>
+                        <li class="flex items-center gap-4"><i class="fas fa-times text-red-500 text-xl w-6"></i> Rushed 1-day turnarounds</li>
+                    </ul>
+                </div>
+                
+                <!-- Optum -->
+                <div class="flex-1 p-10 md:p-14 glass-panel rounded-3xl border border-brand-gold/30 relative shadow-glow transform md:-translate-y-4">
+                    <div class="absolute inset-0 bg-brand-gold/5 blur-3xl rounded-3xl pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <h4 class="text-2xl font-heading font-bold text-white mb-8 border-b border-white/10 pb-6 text-center">Optum Studio</h4>
+                        <ul class="space-y-8 font-light text-gray-300">
+                            <li class="flex items-center gap-4"><i class="fas fa-check text-brand-gold text-xl w-6 drop-shadow-[0_0_8px_rgba(229,186,56,0.8)]"></i> ISO-certified clean room</li>
+                            <li class="flex items-center gap-4"><i class="fas fa-check text-brand-gold text-xl w-6 drop-shadow-[0_0_8px_rgba(229,186,56,0.8)]"></i> Custom bulk-cut tucked edges</li>
+                            <li class="flex items-center gap-4"><i class="fas fa-check text-brand-gold text-xl w-6 drop-shadow-[0_0_8px_rgba(229,186,56,0.8)]"></i> Premium self-healing imported TPU</li>
+                            <li class="flex items-center gap-4"><i class="fas fa-check text-brand-gold text-xl w-6 drop-shadow-[0_0_8px_rgba(229,186,56,0.8)]"></i> Multi-day artisan execution</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-32 bg-brand-dark overflow-hidden scroll-section">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-5 gap-20 reveal-element">
+            
+            <!-- Booking Form -->
+            <div class="lg:col-span-3 glass-panel p-10 md:p-14 rounded-3xl border border-white/10 shadow-2xl">
+                <h3 class="font-heading text-4xl font-bold mb-4 text-white">Request Consultation</h3>
+                <p class="text-brand-gray mb-10 font-light">Secure your spot in our studio. Our concierges will contact you to verify details.</p>
+                
+                <form class="space-y-8" onsubmit="event.preventDefault(); alert('Booking requested successfully!');">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="relative">
+                            <input type="text" id="name" class="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors peer placeholder-transparent" placeholder="Full Name" required>
+                            <label for="name" class="absolute left-0 -top-3.5 text-xs text-gray-500 uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-brand-gold">Full Name</label>
+                        </div>
+                        <div class="relative">
+                            <input type="tel" id="phone" class="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors peer placeholder-transparent" placeholder="Phone" required>
+                            <label for="phone" class="absolute left-0 -top-3.5 text-xs text-gray-500 uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-brand-gold">Phone Number</label>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <input type="text" id="vehicle" class="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors peer placeholder-transparent" placeholder="Vehicle" required>
+                        <label for="vehicle" class="absolute left-0 -top-3.5 text-xs text-gray-500 uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-brand-gold">Vehicle Make & Model</label>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-500 mb-3 uppercase tracking-widest">Service of Interest</label>
+                        <select class="w-full bg-[#111] border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-brand-gold transition-colors appearance-none cursor-pointer" required>
+                            <option value="ppf">Paint Protection Film (PPF)</option>
+                            <option value="ceramic">Ceramic / Graphene Coating</option>
+                            <option value="correction">Paint Correction</option>
+                            <option value="wrap">Color Change Wrap</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-white text-black font-bold py-5 rounded-full hover:bg-brand-gold transition-colors uppercase tracking-widest text-sm mt-4">Submit Request</button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="lg:col-span-2 flex flex-col justify-center space-y-12">
+                <div>
+                    <h4 class="font-bold text-white mb-4 text-xl flex items-center gap-3"><i class="fas fa-map-marker-alt text-brand-gold"></i> Location</h4>
+                    <p class="text-brand-gray text-base leading-relaxed font-light">
+                        123 Luxury Drive<br>
+                        Suite 400<br>
+                        Beverly Hills, CA 90210
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4 text-xl flex items-center gap-3"><i class="far fa-clock text-brand-gold"></i> Hours</h4>
+                    <p class="text-brand-gray text-base leading-relaxed font-light">
+                        Mon - Fri: 8:00 AM - 6:00 PM<br>
+                        Sat: By Appointment Only<br>
+                        Sun: Closed
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4 text-xl flex items-center gap-3"><i class="fas fa-phone text-brand-gold"></i> Contact</h4>
+                    <p class="text-brand-gray text-base leading-relaxed font-light">
+                        (555) 123-4567<br>
+                        info@optumcarcare.com
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/5 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-16 mb-16">
+            <div class="col-span-1 md:col-span-1">
+                <a href="#" class="inline-block mb-6">
+                    <h1 class="font-heading font-bold text-2xl tracking-wider text-white">
+                        <span class="text-brand-gold">OP</span>TUM<br>
+                        <span class="text-[9px] tracking-[0.4em] text-gray-500 font-sans block mt-[-4px] uppercase">Car Care</span>
+                    </h1>
+                </a>
+                <p class="text-brand-gray text-sm mb-8 leading-relaxed font-light">Setting the absolute standard in automotive protection and aesthetic refinement.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-brand-gold hover:text-black hover:border-brand-gold transition-all"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-brand-gold hover:text-black hover:border-brand-gold transition-all"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Studio</h5>
+                <ul class="space-y-4 text-sm text-brand-gray font-light">
+                    <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                    <li><a href="portfolio.html" class="hover:text-white transition-colors">Gallery</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Services</h5>
+                <ul class="space-y-4 text-sm text-brand-gray font-light">
+                    <li><a href="#" class="hover:text-white transition-colors">Paint Protection Film</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Ceramic Coating</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Paint Correction</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Stay Updated</h5>
+                <form class="flex border-b border-white/20 py-2 focus-within:border-brand-gold transition-colors" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Email Address" class="w-full bg-transparent text-sm text-white focus:outline-none placeholder-gray-600">
+                    <button type="submit" class="text-brand-gold hover:text-white transition-colors"><i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-brand-gray font-light">
+            <p>&copy; 2024 Optum Car Care. All rights reserved.</p>
+            <div class="space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (GSAP & UI Logic) -->
+    <script>
+        window.addEventListener('load', () => {
+            
+            // --- Navbar Blur on Scroll ---
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-brand-black/80', 'backdrop-blur-xl', 'border-b', 'border-white/5', 'py-4');
+                    navbar.classList.remove('bg-transparent', 'py-6');
+                } else {
+                    navbar.classList.remove('bg-brand-black/80', 'backdrop-blur-xl', 'border-b', 'border-white/5', 'py-4');
+                    navbar.classList.add('bg-transparent', 'py-6');
+                }
+            });
+
+            // --- Mobile Menu Toggle ---
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let menuOpen = false;
+
+            mobileBtn.addEventListener('click', () => {
+                menuOpen = !menuOpen;
+                if(menuOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    setTimeout(() => {
+                        mobileMenu.classList.remove('opacity-0');
+                        mobileMenu.classList.add('opacity-100');
+                    }, 10);
+                } else {
+                    mobileMenu.classList.remove('opacity-100');
+                    mobileMenu.classList.add('opacity-0');
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                    }, 500);
+                }
+            });
+
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('opacity-100');
+                    mobileMenu.classList.add('opacity-0');
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                        menuOpen = false;
+                    }, 500);
+                });
+            });
+
+            // --- GSAP Animations Setup ---
+            gsap.registerPlugin(ScrollTrigger);
+
+            // 1. Hero Entrance Animation
+            gsap.from(".hero-anim", {
+                y: 40, 
+                opacity: 0, 
+                duration: 1, 
+                stagger: 0.2, 
+                ease: "power3.out"
+            });
+
+            // 2. Hero Background Parallax
+            gsap.to("#hero-bg", {
+                yPercent: 30,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+
+            // 3. Section Reveals (Staggered content inside each section)
+            gsap.utils.toArray('.scroll-section').forEach(section => {
+                const elements = section.querySelectorAll('.reveal-element');
+                if(elements.length > 0) {
+                    gsap.from(elements, {
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top 80%"
+                        },
+                        y: 40,
+                        opacity: 0,
+                        duration: 1,
+                        stagger: 0.2,
+                        ease: "power3.out"
+                    });
+                }
+
+                const cards = section.querySelectorAll('.reveal-card');
+                if(cards.length > 0) {
+                    gsap.from(cards, {
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top 75%"
+                        },
+                        y: 50,
+                        opacity: 0,
+                        duration: 1,
+                        stagger: 0.2,
+                        ease: "power3.out"
+                    });
+                }
+            });
+
+            ScrollTrigger.refresh();
+
+            // --- Apple-Style Quiz Logic ---
+            const quizData = [
+                { question: "Is your vehicle new or used?", options: ["Brand New", "Used (<3 Years)", "Used (3+ Years)"] },
+                { question: "Primary protection goal?", options: ["Rock Chips (PPF)", "Gloss & Easy Wash", "Fix Scratches"] }
+            ];
+            
+            let currentStep = 0;
+            const quizContainer = document.getElementById('quiz-container');
+
+            function renderQuiz() {
+                if (currentStep < quizData.length) {
+                    const q = quizData[currentStep];
+                    let html = `
+                        <div class="transition-opacity duration-300">
+                            <p class="text-xs text-brand-gold font-bold uppercase tracking-widest mb-4">Step ${currentStep + 1} of ${quizData.length}</p>
+                            <h4 class="text-2xl md:text-3xl font-heading text-white mb-8">${q.question}</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    `;
+                    q.options.forEach(opt => {
+                        html += `<button class="quiz-btn border border-white/10 hover:border-brand-gold hover:bg-white hover:text-black transition-all duration-300 py-4 px-6 rounded-2xl text-sm font-medium bg-black/50 backdrop-blur-md">${opt}</button>`;
+                    });
+                    html += `</div></div>`;
+                    quizContainer.innerHTML = html;
+
+                    document.querySelectorAll('.quiz-btn').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            currentStep++;
+                            quizContainer.style.opacity = 0;
+                            setTimeout(() => {
+                                renderQuiz();
+                                quizContainer.style.opacity = 1;
+                            }, 300);
+                        });
+                    });
+                } else {
+                    quizContainer.innerHTML = `
+                        <div class="transition-opacity duration-300 text-center">
+                            <div class="w-16 h-16 rounded-full bg-brand-gold flex items-center justify-center mx-auto mb-6 shadow-glow">
+                                <i class="fas fa-check text-black text-2xl"></i>
+                            </div>
+                            <h4 class="text-3xl font-heading text-white mb-4">Perfect Match</h4>
+                            <p class="text-gray-400 mb-8 max-w-md mx-auto font-light">We recommend scheduling a personalized studio consultation to finalize your protection package.</p>
+                            <a href="#booking" class="inline-block bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-brand-gold transition-colors text-sm tracking-wide">Book Studio</a>
+                        </div>
+                    `;
+                }
+            }
+            
+            if(quizContainer) renderQuiz();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our service | Optum Car Care</title>
+    <meta name="description" content="Explore our premium vehicle protection service including Paint Protection Film (PPF), Ceramic & Graphene Coatings, and Luxury Detailing.">
+    
+    <!-- Tailwind CSS (CDN for static build) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Syncopate (Headings) & Inter (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind Config for Brand Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#141414',
+                            gold: '#E5BA38', // Matched to Optum Logo
+                            gray: '#888888'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Syncopate', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-black text-white font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation (Same as index.html, paths updated) -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-brand-black/80 backdrop-blur-md border-b border-white/10 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <!-- Logo area -->
+            <a href="index.html" class="flex items-center gap-2">
+                <h1 class="font-heading font-bold text-2xl tracking-wider text-white">
+                    <span class="text-brand-gold">OP</span>TUM<br>
+                    <span class="text-xs tracking-[0.3em] text-gray-400 font-sans block mt-[-4px]">CAR CARE</span>
+                </h1>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">Home</a>
+                <a href="service.html" class="text-brand-gold transition-colors">service</a>
+                <a href="process.html" class="hover:text-brand-gold transition-colors">Process</a>
+                <a href="index.html#gallery" class="hover:text-brand-gold transition-colors">Gallery</a>
+                <a href="index.html#reviews" class="hover:text-brand-gold transition-colors">Reviews</a>
+            </div>
+
+            <div class="hidden md:block">
+                <a href="index.html#booking" class="bg-brand-gold text-black px-6 py-2 rounded-sm font-semibold hover:bg-white transition-all duration-300 shadow-[0_0_15px_rgba(229,186,56,0.3)]">Book Now</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-brand-dark/95 backdrop-blur-lg border-b border-white/10 flex flex-col items-center py-6 space-y-6 shadow-2xl">
+            <a href="index.html" class="mobile-link text-lg hover:text-brand-gold">Home</a>
+            <a href="service.html" class="mobile-link text-lg text-brand-gold">service</a>
+            <a href="process.html" class="mobile-link text-lg hover:text-brand-gold">Process</a>
+            <a href="index.html#gallery" class="mobile-link text-lg hover:text-brand-gold">Gallery</a>
+            <a href="index.html#booking" class="mobile-link bg-brand-gold text-black px-8 py-3 rounded-sm font-bold w-11/12 text-center">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- service Hero Section -->
+    <section class="relative pt-40 pb-20 overflow-hidden border-b border-white/5">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&q=80" alt="Luxury Car Detailing Studio" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/90 to-brand-black"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center reveal">
+            <h2 class="text-brand-gold text-sm font-bold tracking-[0.2em] uppercase mb-4">The Optum Standard</h2>
+            <h1 class="font-heading text-4xl md:text-6xl font-bold uppercase tracking-tight mb-6">
+                Premium Car <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-200">Protection</span>
+            </h1>
+            <p class="text-lg text-brand-gray max-w-2xl mx-auto font-light leading-relaxed">
+                Elevating automotive perfection through cutting-edge technology, imported materials, and artisan craftsmanship. Discover our comprehensive suite of detailing and protection service.
+            </p>
+        </div>
+    </section>
+
+    <!-- Detailed service List -->
+    <section class="py-24 bg-brand-black">
+        <div class="max-w-7xl mx-auto px-4 space-y-32">
+
+            <!-- 1. Paint Protection Film (PPF) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+                <div class="order-2 lg:order-1 relative group rounded-2xl overflow-hidden border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80" alt="Paint Protection Film Installation" class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-2">Invisible Shield</h2>
+                    <h3 class="font-heading text-3xl md:text-4xl mb-6">Paint Protection Film (PPF)</h3>
+                    <p class="text-brand-gray leading-relaxed mb-8 text-sm md:text-base">
+                        Our premium TPU Paint Protection Film is the ultimate defense for your vehicle's clear coat. Custom bulk-cut for tucked, invisible edges, it forms a permanent barrier against the harshest elements of the road.
+                    </p>
+                    <ul class="space-y-4 text-sm md:text-base">
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Self-Healing Technology</strong> <span class="text-brand-gray">Light scratches and swirl marks vanish with heat exposure from the sun or engine.</span></div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Impact & Scratch Resistance</strong> <span class="text-brand-gray">Defends against rock chips, road debris, bug acids, and minor abrasions.</span></div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Long-Term Paint Protection</strong> <span class="text-brand-gray">Prevents UV oxidation and chemical etching, preserving showroom quality for years.</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2. Ceramic Coating -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+                <div>
+                    <h2 class="text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-2">Liquid Glass Finish</h2>
+                    <h3 class="font-heading text-3xl md:text-4xl mb-6">Ceramic Coating</h3>
+                    <p class="text-brand-gray leading-relaxed mb-8 text-sm md:text-base">
+                        A nano-ceramic liquid polymer that chemically bonds with your factory paint, creating a rigid super-slick layer of protection that wax and sealants simply cannot match.
+                    </p>
+                    <ul class="space-y-4 text-sm md:text-base">
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Extreme Hydrophobic Properties</strong> <span class="text-brand-gray">Water beads instantly and rolls off the surface, making washing effortless.</span></div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Unmatched Gloss Enhancement</strong> <span class="text-brand-gray">Creates a deep, mirror-like "candy apple" shine that permanently enhances the paint.</span></div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Dirt & Contaminant Resistance</strong> <span class="text-brand-gray">Repels brake dust, mud, and road grime, keeping your vehicle cleaner for longer.</span></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative group rounded-2xl overflow-hidden border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80" alt="Ceramic Coating Water Beads" class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                </div>
+            </div>
+
+            <!-- 3. Graphene Coating -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+                <div class="order-2 lg:order-1 relative group rounded-2xl overflow-hidden border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1610902956698-1002221650b8?auto=format&fit=crop&q=80" alt="Graphene Coating Finish" class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-2">Next-Gen Nano Tech</h2>
+                    <h3 class="font-heading text-3xl md:text-4xl mb-6">Graphene Coating</h3>
+                    <p class="text-brand-gray leading-relaxed mb-8 text-sm md:text-base">
+                        The latest evolution in automotive protection. Graphene-infused coatings reduce surface temperature and provide a tighter web of protection compared to traditional ceramics, preventing water spotting.
+                    </p>
+                    <ul class="space-y-4 text-sm md:text-base">
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Advanced Heat Resistance</strong> <span class="text-brand-gray">Dissipates heat rapidly to prevent water spots from baking into the clear coat.</span></div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Extended Durability</strong> <span class="text-brand-gray">Provides up to 7+ years of resilient, highly chemical-resistant protection.</span></div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Anti-Static Properties</strong> <span class="text-brand-gray">Actively repels dust micro-particles to keep dark-colored vehicles looking pristine.</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4. Premium Car Detailing -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+                <div>
+                    <h2 class="text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-2">Surgical Precision</h2>
+                    <h3 class="font-heading text-3xl md:text-4xl mb-6">Premium Car Detailing</h3>
+                    <p class="text-brand-gray leading-relaxed mb-8 text-sm md:text-base">
+                        Far beyond a standard wash. Our restorative detailing processes rejuvenate your vehicle inside and out, bringing it back to—or better than—factory condition.
+                    </p>
+                    <ul class="space-y-4 text-sm md:text-base">
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Paint Restoration (Correction)</strong> <span class="text-brand-gray">Multi-stage machine compounding to remove heavy swirls, scratches, and oxidation.</span></div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Exterior Decontamination</strong> <span class="text-brand-gray">Clay bar and iron removal treatments to extract embedded industrial fallout.</span></div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Deep Interior Detailing</strong> <span class="text-brand-gray">Steam cleaning, leather conditioning, Alcantara revival, and odor elimination.</span></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative group rounded-2xl overflow-hidden border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1552930294-6b595f4c2974?auto=format&fit=crop&q=80" alt="Paint Correction Detailing" class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                </div>
+            </div>
+
+            <!-- 5. Car Wrapping -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+                <div class="order-2 lg:order-1 relative group rounded-2xl overflow-hidden border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1614026362845-8f6a9c7b8c8d?auto=format&fit=crop&q=80" alt="Matte Black Car Wrap" class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-2">Aesthetic Transformation</h2>
+                    <h3 class="font-heading text-3xl md:text-4xl mb-6">Vinyl Car Wrapping</h3>
+                    <p class="text-brand-gray leading-relaxed mb-8 text-sm md:text-base">
+                        Completely transform the look of your vehicle while protecting the OEM paint underneath. We offer hundreds of colors, textures, and finishes from the world's leading vinyl manufacturers.
+                    </p>
+                    <ul class="space-y-4 text-sm md:text-base">
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Complete Color Change</strong> <span class="text-brand-gray">Switch from gloss to matte, satin, color-shift, or carbon fiber finishes seamlessly.</span></div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Custom Styling & Accents</strong> <span class="text-brand-gray">Chrome deletes, roof wraps, racing stripes, and bespoke custom designs.</span></div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check text-brand-gold mt-1"></i>
+                            <div><strong class="text-white block mb-1">Light Vinyl Protection</strong> <span class="text-brand-gray">Acts as a sacrificial layer against light UV damage, sap, and minor scratches.</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-24 bg-brand-dark border-t border-white/5 relative overflow-hidden">
+        <!-- Abstract Gold Glow Background -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-brand-gold/10 blur-[100px] rounded-full z-0 pointer-events-none"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center reveal">
+            <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">Book Your Vehicle Protection Today</h2>
+            <p class="text-brand-gray mb-10 text-lg max-w-2xl mx-auto">
+                Ready to elevate and protect your investment? Schedule an in-studio consultation with our master installers to discuss the perfect package for your vehicle.
+            </p>
+            <a href="index.html#booking" class="inline-block bg-brand-gold text-black px-10 py-4 rounded-sm font-bold text-lg hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(229,186,56,0.3)] uppercase tracking-wider">
+                Schedule Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-black border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            
+            <!-- Brand -->
+            <div class="col-span-1 md:col-span-1">
+                <a href="index.html" class="inline-block mb-4">
+                    <h1 class="font-heading font-bold text-2xl tracking-wider text-white">
+                        <span class="text-brand-gold">OP</span>TUM<br>
+                        <span class="text-xs tracking-[0.3em] text-gray-400 font-sans block mt-[-4px]">CAR CARE</span>
+                    </h1>
+                </a>
+                <p class="text-brand-gray text-sm mb-6 leading-relaxed">Setting the standard in automotive protection and aesthetic refinement.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-gold hover:text-black transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-gold hover:text-black transition-colors"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-gold hover:text-black transition-colors"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Quick Links</h5>
+                <ul class="space-y-3 text-sm text-brand-gray">
+                    <li><a href="index.html" class="hover:text-brand-gold transition-colors">Home</a></li>
+                    <li><a href="service.html" class="text-brand-gold transition-colors">service</a></li>
+                    <li><a href="index.html#gallery" class="hover:text-brand-gold transition-colors">Gallery</a></li>
+                    <li><a href="index.html#reviews" class="hover:text-brand-gold transition-colors">Reviews</a></li>
+                    <li><a href="index.html#booking" class="hover:text-brand-gold transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- service -->
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">service</h5>
+                <ul class="space-y-3 text-sm text-brand-gray">
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Paint Protection Film</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Ceramic Coating</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Graphene Coating</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Paint Correction</a></li>
+                    <li><a href="#" class="hover:text-brand-gold transition-colors">Interior Detailing</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Newsletter</h5>
+                <p class="text-brand-gray text-sm mb-4">Subscribe for maintenance tips and studio updates.</p>
+                <form class="flex" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Email Address" class="w-full bg-white/5 border border-white/10 rounded-l-sm px-4 py-2 text-sm text-white focus:outline-none focus:border-brand-gold">
+                    <button type="submit" class="bg-brand-gold text-black px-4 rounded-r-sm hover:bg-white transition-colors"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-brand-gray">
+            <p>&copy; 2024 Optum Car Care. All rights reserved.</p>
+            <div class="space-x-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External Script -->
+    <script src="script.js"></script>
+</body>
+</html>

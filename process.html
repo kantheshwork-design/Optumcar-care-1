@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Process | Optum Car Care</title>
+    <meta name="description" content="Discover the meticulous 6-step detailing and protection installation process at Optum Car Care's premium studio.">
+    
+    <!-- Tailwind CSS (CDN for static build) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Syncopate (Headings) & Inter (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind Config for Brand Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#141414',
+                            gold: '#E5BA38', // Matched to Optum Logo
+                            gray: '#888888'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Syncopate', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-black text-white font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-brand-black/80 backdrop-blur-md border-b border-white/10 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <!-- Logo area -->
+            <a href="index.html" class="flex items-center gap-2">
+                <h1 class="font-heading font-bold text-2xl tracking-wider text-white">
+                    <span class="text-brand-gold">OP</span>TUM<br>
+                    <span class="text-xs tracking-[0.3em] text-gray-400 font-sans block mt-[-4px]">CAR CARE</span>
+                </h1>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">Home</a>
+                <a href="services.html" class="hover:text-brand-gold transition-colors">Services</a>
+                <a href="process.html" class="text-brand-gold transition-colors">Process</a>
+                <a href="index.html#gallery" class="hover:text-brand-gold transition-colors">Gallery</a>
+                <a href="index.html#reviews" class="hover:text-brand-gold transition-colors">Reviews</a>
+            </div>
+
+            <div class="hidden md:block">
+                <a href="index.html#booking" class="bg-brand-gold text-black px-6 py-2 rounded-sm font-semibold hover:bg-white transition-all duration-300 shadow-[0_0_15px_rgba(229,186,56,0.3)]">Book Now</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-brand-dark/95 backdrop-blur-lg border-b border-white/10 flex flex-col items-center py-6 space-y-6 shadow-2xl">
+            <a href="index.html" class="mobile-link text-lg hover:text-brand-gold">Home</a>
+            <a href="services.html" class="mobile-link text-lg hover:text-brand-gold">Services</a>
+            <a href="process.html" class="mobile-link text-lg text-brand-gold">Process</a>
+            <a href="index.html#gallery" class="mobile-link text-lg hover:text-brand-gold">Gallery</a>
+            <a href="index.html#booking" class="mobile-link bg-brand-gold text-black px-8 py-3 rounded-sm font-bold w-11/12 text-center">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-40 pb-20 overflow-hidden border-b border-white/5">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80" alt="Car Detailer Working" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/90 to-brand-black"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center reveal">
+            <h2 class="text-brand-gold text-sm font-bold tracking-[0.2em] uppercase mb-4">Methodology</h2>
+            <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight mb-6 leading-tight">
+                Our Professional <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-200">Installation Process</span>
+            </h1>
+            <p class="text-lg text-brand-gray max-w-2xl mx-auto font-light leading-relaxed">
+                Perfection cannot be rushed. Discover the meticulous, multi-stage workflow we deploy for every vehicle that enters our climate-controlled studio.
+            </p>
+        </div>
+    </section>
+
+    <!-- The 6-Step Process Cards -->
+    <section class="py-24 bg-brand-black relative">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Step 1 -->
+                <div class="group relative bg-brand-dark rounded-xl p-8 border border-white/5 hover:border-brand-gold/50 transition-all duration-500 overflow-hidden reveal">
+                    <div class="absolute -right-6 -top-10 text-[150px] font-heading font-bold text-white/[0.03] group-hover:text-brand-gold/[0.05] transition-colors duration-500 pointer-events-none">1</div>
+                    <div class="w-14 h-14 rounded-full bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-brand-gold transition-all duration-500 shadow-lg">
+                        <i class="fas fa-search text-xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3 text-white">Vehicle Inspection</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed">
+                        We begin with a comprehensive evaluation under high-intensity inspection lights. We measure clear coat thickness, map out existing damage, and set realistic expectations for the final result.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="group relative bg-brand-dark rounded-xl p-8 border border-white/5 hover:border-brand-gold/50 transition-all duration-500 overflow-hidden reveal" style="transition-delay: 100ms;">
+                    <div class="absolute -right-6 -top-10 text-[150px] font-heading font-bold text-white/[0.03] group-hover:text-brand-gold/[0.05] transition-colors duration-500 pointer-events-none">2</div>
+                    <div class="w-14 h-14 rounded-full bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-brand-gold transition-all duration-500 shadow-lg">
+                        <i class="fas fa-soap text-xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3 text-white">Surface Preparation</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed">
+                        A rigorous decontamination wash using pH-neutral foam, followed by iron particle removers and manual clay bar treatments to strip the paint of all bonded contaminants and old waxes.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="group relative bg-brand-dark rounded-xl p-8 border border-white/5 hover:border-brand-gold/50 transition-all duration-500 overflow-hidden reveal" style="transition-delay: 200ms;">
+                    <div class="absolute -right-6 -top-10 text-[150px] font-heading font-bold text-white/[0.03] group-hover:text-brand-gold/[0.05] transition-colors duration-500 pointer-events-none">3</div>
+                    <div class="w-14 h-14 rounded-full bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-brand-gold transition-all duration-500 shadow-lg">
+                        <i class="fas fa-magic text-xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3 text-white">Paint Correction</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed">
+                        Using dual-action polishers and premium compounds, we permanently level the clear coat. This multi-stage process removes swirl marks, holograms, and light scratches, restoring a flawless mirror finish.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="group relative bg-brand-dark rounded-xl p-8 border border-white/5 hover:border-brand-gold/50 transition-all duration-500 overflow-hidden reveal">
+                    <div class="absolute -right-6 -top-10 text-[150px] font-heading font-bold text-white/[0.03] group-hover:text-brand-gold/[0.05] transition-colors duration-500 pointer-events-none">4</div>
+                    <div class="w-14 h-14 rounded-full bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-brand-gold transition-all duration-500 shadow-lg">
+                        <i class="fas fa-shield-alt text-xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3 text-white">Protection Installation</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed">
+                        Application takes place in our ISO-standard clean room. Whether we are precisely laying Paint Protection Film (PPF) or hand-applying a Ceramic Coating, this stage locks in the corrected perfection.
+                    </p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="group relative bg-brand-dark rounded-xl p-8 border border-white/5 hover:border-brand-gold/50 transition-all duration-500 overflow-hidden reveal" style="transition-delay: 100ms;">
+                    <div class="absolute -right-6 -top-10 text-[150px] font-heading font-bold text-white/[0.03] group-hover:text-brand-gold/[0.05] transition-colors duration-500 pointer-events-none">5</div>
+                    <div class="w-14 h-14 rounded-full bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-brand-gold transition-all duration-500 shadow-lg">
+                        <i class="fas fa-clipboard-check text-xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3 text-white">Quality Check</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed">
+                        The vehicle undergoes a strenuous final inspection. We use infrared curing lamps to bake coatings and edge-check all PPF to guarantee zero lifting, bubbling, or high spots before delivery.
+                    </p>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="group relative bg-brand-dark rounded-xl p-8 border border-white/5 hover:border-brand-gold/50 transition-all duration-500 overflow-hidden reveal" style="transition-delay: 200ms;">
+                    <div class="absolute -right-6 -top-10 text-[150px] font-heading font-bold text-white/[0.03] group-hover:text-brand-gold/[0.05] transition-colors duration-500 pointer-events-none">6</div>
+                    <div class="w-14 h-14 rounded-full bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-brand-gold transition-all duration-500 shadow-lg">
+                        <i class="fas fa-key text-xl text-brand-gold"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3 text-white">Vehicle Delivery</h3>
+                    <p class="text-brand-gray text-sm leading-relaxed">
+                        A final wipe-down is performed. We then invite you to the studio for the final reveal, walking you through the completed work and educating you on long-term maintenance for your newly protected vehicle.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-24 bg-brand-dark border-t border-white/5 relative">
+        <!-- Abstract Glow -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-gold/5 blur-[120px] rounded-full z-0 pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 relative z-10 reveal">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-gold text-sm font-bold tracking-[0.2em] uppercase mb-4">The Optum Difference</h2>
+                <h3 class="font-heading text-3xl md:text-5xl">Roadside Shops vs Optum Studio</h3>
+                <p class="text-brand-gray mt-6 max-w-2xl mx-auto">See why luxury vehicle owners trust our controlled environment and certified processes over standard detailers.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                
+                <!-- Competitors (Standard Shop) -->
+                <div class="bg-black/80 p-8 md:p-12 lg:border-r border-white/10">
+                    <h4 class="text-xl font-bold text-gray-400 mb-10 border-b border-white/10 pb-4 flex items-center gap-3">
+                        <i class="fas fa-warehouse opacity-50"></i> Standard Roadside Shops
+                    </h4>
+                    <ul class="space-y-8">
+                        <li>
+                            <h5 class="text-white font-semibold mb-1 flex items-center gap-2"><i class="fas fa-times-circle text-red-500"></i> Environment</h5>
+                            <p class="text-sm text-gray-500 pl-6">Open-air bays exposed to dust, wind, and varying temperatures, which trap debris under films.</p>
+                        </li>
+                        <li>
+                            <h5 class="text-white font-semibold mb-1 flex items-center gap-2"><i class="fas fa-times-circle text-red-500"></i> Installation Quality</h5>
+                            <p class="text-sm text-gray-500 pl-6">Pre-cut computer templates with visible gaps and exposed edges that collect dirt over time.</p>
+                        </li>
+                        <li>
+                            <h5 class="text-white font-semibold mb-1 flex items-center gap-2"><i class="fas fa-times-circle text-red-500"></i> Tools Used</h5>
+                            <p class="text-sm text-gray-500 pl-6">Generic razor blades on paint and standard off-the-shelf consumer grade chemicals.</p>
+                        </li>
+                        <li>
+                            <h5 class="text-white font-semibold mb-1 flex items-center gap-2"><i class="fas fa-times-circle text-red-500"></i> Precision</h5>
+                            <p class="text-sm text-gray-500 pl-6">Rushed application focused on volume rather than flawless, invisible execution.</p>
+                        </li>
+                        <li>
+                            <h5 class="text-white font-semibold mb-1 flex items-center gap-2"><i class="fas fa-times-circle text-red-500"></i> Warranty</h5>
+                            <p class="text-sm text-gray-500 pl-6">Verbal guarantees or limited shop warranties that often aren't honored long-term.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Optum Car Care -->
+                <div class="bg-gradient-to-br from-brand-dark to-[#1a1710] p-8 md:p-12 relative">
+                    <!-- Subtle inner glow -->
+                    <div class="absolute inset-0 bg-brand-gold/5 mix-blend-overlay"></div>
+                    
+                    <h4 class="text-xl font-heading text-brand-gold mb-10 border-b border-white/10 pb-4 relative z-10 flex items-center gap-3">
+                        <i class="fas fa-gem"></i> Optum Car Care Studio
+                    </h4>
+                    <ul class="space-y-8 relative z-10">
+                        <li>
+                            <h5 class="text-white font-semibold mb-1 flex items-center gap-2"><i class="fas fa-check-circle text-brand-gold drop-shadow-[0_0_8px_rgba(229,186,56,0.5)]"></i> Environment</h5>
+                            <p class="text-sm text-gray-300 pl-6">Climate-controlled, deeply sanitized clean room to ensure absolute zero dust contamination.</p>
+                        </li>
+                        <li>
+                            <h5 class="text-white font-semibold mb-1 flex items-center gap-2"><i class="fas fa-check-circle text-brand-gold drop-shadow-[0_0_8px_rgba(229,186,56,0.5)]"></i> Installation Quality</h5>
+                            <p class="text-sm text-gray-300 pl-6">Custom bulk-cut installations allowing us to tuck and hide all edges for a seamless, invisible finish.</p>
+                        </li>
+                        <li>
+                            <h5 class="text-white font-semibold mb-1 flex items-center gap-2"><i class="fas fa-check-circle text-brand-gold drop-shadow-[0_0_8px_rgba(229,186,56,0.5)]"></i> Tools Used</h5>
+                            <p class="text-sm text-gray-300 pl-6">Specialized non-marring tools, paint thickness gauges, and premium imported, self-healing TPU films.</p>
+                        </li>
+                        <li>
+                            <h5 class="text-white font-semibold mb-1 flex items-center gap-2"><i class="fas fa-check-circle text-brand-gold drop-shadow-[0_0_8px_rgba(229,186,56,0.5)]"></i> Precision</h5>
+                            <p class="text-sm text-gray-300 pl-6">Multi-day artisan process with zero shortcuts. We dismantle trim if necessary for the perfect tuck.</p>
+                        </li>
+                        <li>
+                            <h5 class="text-white font-semibold mb-1 flex items-center gap-2"><i class="fas fa-check-circle text-brand-gold drop-shadow-[0_0_8px_rgba(229,186,56,0.5)]"></i> Warranty</h5>
+                            <p class="text-sm text-gray-300 pl-6">Formal 10-Year to Lifetime Nationwide Manufacturer warranties tracked via CARFAX.</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-24 bg-brand-black border-t border-white/5 relative overflow-hidden">
+        <!-- Background Image overlay -->
+        <div class="absolute inset-0 z-0 opacity-10">
+            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80" alt="Texture" class="w-full h-full object-cover">
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center reveal">
+            <h2 class="font-heading text-3xl md:text-5xl font-bold mb-6">Experience Flawless Execution</h2>
+            <p class="text-brand-gray mb-10 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                Do not leave your luxury vehicle's protection to chance. Trust the process engineered for absolute perfection.
+            </p>
+            <a href="index.html#booking" class="inline-block bg-brand-gold text-black px-10 py-4 rounded-sm font-bold text-lg hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(229,186,56,0.3)] uppercase tracking-wider">
+                Book Your Vehicle Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/10 pt-16 pb-8 relative z-20">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            
+            <!-- Brand -->
+            <div class="col-span-1 md:col-span-1">
+                <a href="index.html" class="inline-block mb-4">
+                    <h1 class="font-heading font-bold text-2xl tracking-wider text-white">
+                        <span class="text-brand-gold">OP</span>TUM<br>
+                        <span class="text-xs tracking-[0.3em] text-gray-400 font-sans block mt-[-4px]">CAR CARE</span>
+                    </h1>
+                </a>
+                <p class="text-brand-gray text-sm mb-6 leading-relaxed">Setting the standard in automotive protection and aesthetic refinement.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-gold hover:text-black transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-gold hover:text-black transition-colors"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-gold hover:text-black transition-colors"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Quick Links</h5>
+                <ul class="space-y-3 text-sm text-brand-gray">
+                    <li><a href="index.html" class="hover:text-brand-gold transition-colors">Home</a></li>
+                    <li><a href="services.html" class="hover:text-brand-gold transition-colors">Services</a></li>
+                    <li><a href="process.html" class="hover:text-brand-gold transition-colors">Process</a></li>
+                    <li><a href="index.html#reviews" class="hover:text-brand-gold transition-colors">Reviews</a></li>
+                    <li><a href="index.html#booking" class="hover:text-brand-gold transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Services</h5>
+                <ul class="space-y-3 text-sm text-brand-gray">
+                    <li><a href="services.html" class="hover:text-brand-gold transition-colors">Paint Protection Film</a></li>
+                    <li><a href="services.html" class="hover:text-brand-gold transition-colors">Ceramic Coating</a></li>
+                    <li><a href="services.html" class="hover:text-brand-gold transition-colors">Graphene Coating</a></li>
+                    <li><a href="services.html" class="hover:text-brand-gold transition-colors">Paint Correction</a></li>
+                    <li><a href="services.html" class="hover:text-brand-gold transition-colors">Interior Detailing</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Newsletter</h5>
+                <p class="text-brand-gray text-sm mb-4">Subscribe for maintenance tips and studio updates.</p>
+                <form class="flex" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Email Address" class="w-full bg-white/5 border border-white/10 rounded-l-sm px-4 py-2 text-sm text-white focus:outline-none focus:border-brand-gold">
+                    <button type="submit" class="bg-brand-gold text-black px-4 rounded-r-sm hover:bg-white transition-colors"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-brand-gray">
+            <p>&copy; 2024 Optum Car Care. All rights reserved.</p>
+            <div class="space-x-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External Script -->
+    <script src="script.js"></script>
+</body>
+</html>
